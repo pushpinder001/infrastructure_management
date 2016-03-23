@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+.ani{
+	position: fixed;
+    bottom: 0;
+	left: 0;
+	-webkit-animation-delay: 0.75s; /* Chrome, Safari, Opera */
+    animation-delay: 0.75s;
+	z-index:-2;
+	opacity:0.8
+}
+
+.ani1{
+	position: fixed;
+    bottom: 0;
+	right: 0;
+	-webkit-animation-delay: 0.25s; /* Chrome, Safari, Opera */
+    animation-delay: 0.25s;
+	z-index:-1;
+	opacity: 0.8;
+}

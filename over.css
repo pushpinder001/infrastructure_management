@@ -1,0 +1,148 @@
+
+body {
+	background-color:rgba(19,35,47,0.9);
+	background-size:cover;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+.zz {
+	background-color:silver;
+	height:3px;
+}
+
+select {
+	width:auto !important;
+}
+
+.zzz {
+  background:rgba(19,35,47,0.9);
+  padding: 40px;
+  width: 1000px;
+  margin:40px auto;
+  border-radius:4px;
+  box-shadow:0 4px 10px 4px rgba(19,35,47,.3);
+}
+
+.btn:hover {
+	background-color: #4A7EA1;
+}
+.btn {
+	background-color: #2C4352;
+}
+
+.input-field input[type=text]:focus {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+	 color:white;
+   }
+   
+ .input-field input[type=text].valid {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+	 color:white;
+   }
+   
+   .input-field input[type=password]:focus {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+	 color:white;
+   }
+   
+ .input-field input[type=password].valid {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+	 color:white;
+   }
+   
+   .input-field input[type=number]:focus {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+	 color:white;
+   }
+   
+ .input-field input[type=number].valid {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+	 color:white;
+   }
+   
+   input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.input-field input[type=text]:disabled {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+	 color:white;
+   }
+   
+   textarea:focus {
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: 0 1px 0 0 white;
+  -moz-box-shadow: 0 1px 0 0 white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+table {
+    border-collapse: collapse;
+	box-shadow: 2px 2px 2px #8B8A8A;
+}
+
+table, th, td {
+    border: 2px solid white;
+	color: white;
+	font-size: 20px;
+}
+
+
+p {
+	font-size:18px;
+}
+
+.myBox {
+	cursor: deafult;
+}
+
+nav {
+	background:none;
+	box-shadow:none;
+}
+
+.material-icons {
+	vertical-align: text-top;
+	color:white;
+}
+
+.inactive {
+	opacity:0.6;
+}
+
+a {
+	color: white;
+}
+
+a:hover {
+	color: #4A7EA1;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:none;
+	font-size:18px;
+    border:1px solid;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+input[type=submit]:hover {
+    padding:5px 15px; 
+    background:#4A7EA1;
+	font-size:18px;
+    border:1px solid;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
