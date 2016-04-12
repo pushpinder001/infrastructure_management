@@ -1,6 +1,10 @@
 <?php
 	include ('student.php');
 	session_start();
+	if(isset($_SESSION['std'])==0)
+	{
+		header("Location:login.php");
+	}
 ?>
 <!DOCTYPE html>
   <html>
@@ -47,20 +51,18 @@
 <div class="container">
 <h3 align="center"><span class="white-text">Register Complaint</span></h3>
 </div>
-<br/><br/><br/>
 <div class="container">
  <div class="row">
  	
     <form class="col s6 offset-s3" action="check_register_complaint_student.php" method="post">
     <div class="row">
-		<div class="col s12"><p align="center" style="color:#67D692"><?php 	
+		<div class="col s12"><?php 	
 				if (isset($_SESSION['st']))
 				{
 					echo $_SESSION['st'];
 					unset($_SESSION['st']);
 				}
-     ?></p></div>
-        <div class="row" style="width:5px"></div>
+     ?></div></div>
       <div class="row">
         <div class="input-field col s12">
           <input disabled value="<?php echo $_SESSION['std']->get_roll_no();?>" id="disabled" type="text" class="validate" >

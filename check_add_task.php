@@ -15,11 +15,11 @@
 		session_start();
 		if(empty($_POST["type"] ))
 		{
-			$_SESSION['st']="Type feild cannot be empty";
+			$_SESSION['st']='<p align="center" style="color:#ffe066">Type field cannot be empty</p>';
 		}
 		else
 		{
-			$_SESSION['st']="Description feild cannot be empty";
+			$_SESSION['st']='<p align="center" style="color:#ffe066">Description field cannot be empty</p>';
 		}
 		header("Location:add_task.php");
 	}

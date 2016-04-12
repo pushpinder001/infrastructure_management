@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(isset($_SESSION['adm'])==0)
+	{
+		header("Location:login.php");
+	}
+?>
 <!DOCTYPE html>
   <html>
     <head>
@@ -44,14 +51,12 @@
 <div class="container">
 <h3 align="center"><span class="white-text">Add Task</span></h3>
 </div>
-<br/><br/><br/>
 <div class="container">
 	<div class="row">
  	
     <form class="col s6 offset-s3" action="check_add_task.php" method="post">
        <div class="row">
-			<div class="col s12"><p align="center" style="color:red"><?php 
-				session_start();
+			<div class="col s12"><?php 
 				//echo "hello";
 				if (isset($_SESSION['st']))
 				{
@@ -59,7 +64,8 @@
 					unset($_SESSION['st']);
 					//session_destroy();
 				}
-     ?></p></div>
+     ?></div>
+	 </div>
       <div class="row">
       		<div class="input-field col s12">
     <select name="type">

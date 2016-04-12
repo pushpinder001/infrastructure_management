@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php session_start();
+	if(isset($_SESSION['worker'])==0)
+	{
+		header("Location:login.php");
+	}
+?>
+
 <!DOCTYPE html>
   <html>
     <head>

@@ -1,7 +1,11 @@
 <?php
 	session_start();
 	include('worker_o.php');
-	$worker = unserialize($_SESSION['worker']);
+	if(isset($_SESSION['worker1'])==0)
+	{
+		header("Location:login.php");
+	}
+	$worker = unserialize($_SESSION['worker1']);
 ?>
 <!DOCTYPE html>
   <html>
@@ -52,15 +56,17 @@
 <div class="row">
 <div class="col s8 offset-s2">
 <table>
-		<col style="width:10%">
-        <col style="width:10%">
+		<col style="width:8%">
+        <col style="width:12%">
         <col style="width:40%">
-		<col style="width:20%">
+        <col style="width:12%">
+		<col style="width:10%">
         <thead>
           <tr>
               <th data-field="id">Order Id</th>
               <th data-field="type">Type</th>
               <th data-field="desc">Description</th>
+			  <th data-field="quan">Quantity</th>
 			  <th data-field="date">Date</th>
 			  <th data-field="status">Status</th>
           </tr>

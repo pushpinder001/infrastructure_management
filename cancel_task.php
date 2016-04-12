@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(isset($_SESSION['adm'])==0)
+	{
+		header("Location:login.php");
+	}
+?>
 <!DOCTYPE html>
   <html>
     <head>
@@ -45,8 +52,7 @@
 <h3 align="center"><span class="white-text">Cancel Task</span></h3>
 </div>
 <div class="row">
-			<div class="col s12"><p align="center" style="color:#67D692"><?php 
-				session_start();
+			<div class="col s12"><?php 
 				//echo "hello";
 				if (isset($_SESSION['st']))
 				{
@@ -54,7 +60,7 @@
 					unset($_SESSION['st']);
 					//session_destroy();
 				}
-     ?></p></div>
+     ?></div>
 <br/><br/><br/>
 <div class="row">
 <div class="col s8 offset-s2">

@@ -57,7 +57,7 @@
         <thead>
           <tr>
               <th data-field="id">Complaint Id</th>
-              <th data-field="S_id">Student Id</th>
+              <th data-field="S_id">Id</th>
               <th data-field="room_no">Room Number</th>
               <th data-field="type">Type</th>
               <th data-field="desc">Description</th>

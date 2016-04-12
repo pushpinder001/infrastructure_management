@@ -10,7 +10,7 @@
 		$username=$_POST['username'];
 		$password=$_POST['password'];
 		$type=$_POST['type'];
-		$sql="SELECT * FROM user WHERE roll_no='$username' AND password='$password' AND type='$t_type[$type]'";
+		$sql="SELECT * FROM user WHERE BINARY roll_no='$username' AND BINARY password='$password' AND BINARY type='$t_type[$type]'";
 		$res=$conn->query($sql);
 		if($res!=false){
 			session_start();
@@ -36,7 +36,7 @@
 					else
 					{
 						$worker=new Worker_o();
-						$_SESSION['worker']=serialize($worker);
+						$_SESSION['worker1']=serialize($worker);
 						//$_SESSION['worker']=$worker;
 						header("Location:o_worker_screen.php");
 					}
@@ -51,7 +51,7 @@
 			}
 			else
 			{
-				$_SESSION['st']="Wrong Username or Password";
+				$_SESSION['st']='<p align="center" style="color:#ffe066">Wrong Username or Password</p>';
 				header("Location:login.php");
 			}
 		}
@@ -63,16 +63,19 @@
 	else
 	{
 		session_start();
-		if(empty($_POST["username"] ))
+		if(isset($_POST['username']))
 		{
-			$_SESSION['st']="Username feild cannot be empty";
-		}
-		else if(empty($_POST["password"] )){
-			$_SESSION['st']="Password feild cannot be empty";
-		}
-		else
-		{
-			$_SESSION['st']="Select Option feild cannot be empty";
+			if(empty($_POST["username"]))
+			{
+				$_SESSION['st']='<p align="center" style="color:#ffe066">Username field cannot be empty</p>';
+			}
+			else if(empty($_POST["password"] )){
+				$_SESSION['st']='<p align="center" style="color:#ffe066">Password field cannot be empty</p>';
+			}
+			else
+			{
+				$_SESSION['st']='<p align="center" style="color:#ffe066">Select Option field cannot be empty</p>';
+			}
 		}
 		header("Location:login.php");
 	}

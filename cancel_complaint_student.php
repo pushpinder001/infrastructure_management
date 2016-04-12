@@ -1,6 +1,10 @@
 <?php
 include ('student.php');
 session_start();
+if(isset($_SESSION['std'])==0)
+{
+	header("Location:login.php");
+}
 ?>
 <!DOCTYPE html>
   <html>
@@ -50,7 +54,7 @@ session_start();
 </div>
 <br/>
     <div class="row">
-			<div class="col s12"><p align="center" style="color:#67D692"><?php 
+			<div class="col s12"><?php 
 				//echo "hello";
 				if (isset($_SESSION['st']))
 				{
@@ -58,7 +62,7 @@ session_start();
 					unset($_SESSION['st']);
 					//session_destroy();
 				}
-     ?></p></div>
+     ?></div>
 <div class="row">
 <div class="col s8 offset-s2">
 <table>
@@ -78,13 +82,14 @@ session_start();
         <tbody>
 	 <?php
 	include ('connection.php');
-	$sql="SELECT * FROM `complaint` ORDER by status ASC,date DESC";
+	$roll=$_SESSION['std']->get_roll_no();
+	$sql="SELECT * FROM `complaint` WHERE status='Pending' AND Student_Id='$roll' ORDER by status ASC,date DESC";
 	$data=mysqli_query($conn,$sql);
 	while($row = mysqli_fetch_assoc($data)):
-		if(strcmp($row['Student_Id'],$_SESSION['std']->get_roll_no())!=0)
-		{
-			continue;
-		}
+		#if((strcmp($row['Student_Id'],$_SESSION['std']->get_roll_no())!=0))
+		#{
+		#	continue;
+		#}
 		echo '<tr>';
 		echo	'<td>';
 		echo $row['Id'];

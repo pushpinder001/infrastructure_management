@@ -9,11 +9,11 @@
 			$sql="UPDATE `complaint` SET `status`='Completed' WHERE `Id`='$id' ";
 			$res=$conn->query($sql);
 			if($res=== TRUE){
-				$_SESSION['st']="Status of complaint has been successfully updated";
+				$_SESSION['st']='<p align="center" style="color:#67D692">Status of complaint has been successfully updated</p>';
 			}
 			else
 			{
-				$_SESSION['st']="Status of complaint not updated";
+				$_SESSION['st']='<p align="center" style="color:#ffe066">Status of complaint not updated</p>';
 			}
 			header("Location:c_worker_update_complaint.php");
 		}
@@ -35,6 +35,9 @@
 						echo '<tr>';
 						echo	'<td>';
 						echo $row['Id'];
+						echo '</td>';
+						echo	'<td>';
+						echo $row['Room_no'];
 						echo '</td>';
 						echo	'<td>';
 						echo $row['Description'];

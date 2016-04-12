@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	if(isset($_SESSION['worker1'])==0)
+	{
+		header("Location:login.php");
+	}
 ?>
 <!DOCTYPE html>
   <html>
@@ -48,7 +52,7 @@
 </div>
 <br/>
     <div class="row">
-		<div class="col s12"><p align="center" style="color:red"><?php 	
+		<div class="col s12"><?php 	
 				//echo "hello";
 				if (isset($_SESSION['st']))
 				{
@@ -56,21 +60,24 @@
 					unset($_SESSION['st']);
 					//session_destroy();
 				}
-     ?></p></div>
+     ?></div>
+	 </div>
 <div class="row">
 <div class="col s8 offset-s2">
 <table>
-		<col style="width:10%">
-        <col style="width:10%">
+		<col style="width:8%">
+        <col style="width:12%">
         <col style="width:40%">
-		<col style="width:20%">
+        <col style="width:12%">
+		<col style="width:10%">
         <thead>
           <tr>
               <th data-field="id">Order Id</th>
               <th data-field="type">Type</th>
               <th data-field="desc">Description</th>
+              <th data-field="quan">Quantity</th>
 			  <th data-field="date">Date</th>
-			  <th data-field="cancel">Cancel</th>
+			  <th data-field="done">Done?</th>
           </tr>
         </thead>
         <tbody>
@@ -92,6 +99,9 @@
 		echo '</td>';
 		echo	'<td>';
 		echo $row['item'];
+		echo '</td>';
+		echo	'<td>';
+		echo $row['quantity'];
 		echo '</td>';
 		echo '<td>';
 		echo $row['date'];

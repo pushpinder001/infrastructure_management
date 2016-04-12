@@ -1,3 +1,22 @@
+<?php
+	session_start();
+	if(isset($_SESSION['adm'])!=0)
+	{
+		header("Location:admin_screen.php");
+	}
+	if(isset($_SESSION['std'])!=0)
+	{
+		header("Location:student_screen.php");
+	}
+	if(isset($_SESSION['worker'])!=0)
+	{
+		header("Location:c_worker_screen.php");
+	}
+	if(isset($_SESSION['worker1'])!=0)
+	{
+		header("Location:o_worker_screen.php");
+	}
+?>
 <!DOCTYPE html>
   <html>
     <head>
@@ -44,14 +63,13 @@
  	
     <form class="col s6 offset-s3 " action="check_login.php" method="post">
       <div class="row">
-			<div class="col s12"><p align="center" style="color:#67D692"><?php 
-				session_start();
+			<div class="col s12"><?php 
 				if (isset($_SESSION['st']))
 				{
 					echo $_SESSION['st'];
 					session_destroy();
 				}
-     ?></p></div>
+     ?></div>
 		</div>
 		<div class="row">
         <div class="input-field col s12">

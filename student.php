@@ -33,10 +33,10 @@
 			$sql = "INSERT INTO `complaint` (`Student_Id`, `Room_no`, `Type`, `Description`,`date`) VALUES
 			('$complaint->roll_no','$complaint->room_no','$complaint->type','$complaint->description','$date')";
 			if ($conn->query($sql) === TRUE) {
-				$_SESSION['st']="Complaint is successfully registered";
+				$_SESSION['st']='<p align="center" style="color:#67D692">Complaint is successfully registered</p>';
 				header("location:register_complaint_student.php");
 			} else {
-				$_SESSION['st']="Registration fail";
+				$_SESSION['st']='<p align="center" style="color:#ffe066">Registration fail</p>';
 				header("location:register_complaint_student.php");
 			}
 		}
@@ -80,12 +80,12 @@
 			$conn=$this->conn;
 			$res=$conn->query($sql);
 			if($res === TRUE){
-				$_SESSION['st']="Complaint is successfully cancelled";
+				$_SESSION['st']='<p align="center" style="color:#67D692">Complaint is successfully cancelled</p>';
 				header("Location:cancel_complaint_student.php");
 			}
 			else
 			{
-				$_SESSION['st']="cancellation fail";
+				$_SESSION['st']='<p align="center" style="color:#ffe066">Cancellation fail</p>';
 				header("Location:cancel_complaint_student.php");
 				
 			}

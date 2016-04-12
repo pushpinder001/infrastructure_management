@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(isset($_SESSION['adm'])==0)
+	{
+		header("Location:login.php");
+	}
+?>
 <!DOCTYPE html>
   <html>
     <head>
@@ -44,14 +51,12 @@
 <div class="container">
 <h3 align="center"><span class="white-text">Update Account</span></h3>
 </div>
-<br/><br/><br/>
  <div class="container">
  <div class="row">
  	
     <form class="col s12" action="check_update_accout.php" method="post">
        <div class="row">
-			<div class="col s12"><p align="center" style="color:#67D692"><?php 
-				session_start();
+			<div class="col s12"><?php
 				//echo "hello";
 				if (isset($_SESSION['st']))
 				{
@@ -59,8 +64,9 @@
 					unset($_SESSION['st']);
 					//session_destroy();
 				}
-     ?></p></div>
-      <div class="row" style="padding:10px">
+     ?></div>
+	 </div>
+      <div class="row" >
         <div class="input-field col s6">
           <input id="first_name" type="text" class="validate" name="username">
           <label for="first_name"><span class="white-text"><font size="+1">Name</font></span></label>
@@ -70,7 +76,7 @@
           <label for="roll_number"><span class="white-text"><font size="+1">Roll Number</font></span></label>
         </div>
       </div>
-      <div class="row" style="padding:10px">
+      <div class="row">
         <div class="input-field col s6">
           <input id="password" type="password" class="validate" name="password">
           <label for="password"><span class="white-text"><font size="+1">Password</font></span></label>
@@ -80,7 +86,7 @@
           <label for="confirm_password"><span class="white-text"><font size="+1">Confirm Password</font></span></label>
         </div>
       </div>
-      <div class="row" style="padding:10px">
+      <div class="row">
       	<div class="input-field col s6 offset-s3">
           <input id="room_number" type="number" class="validate" name="room_no">
           <label for="room_number"><span class="white-text"><font size="+1">Room number</font></span></label>

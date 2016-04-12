@@ -1,6 +1,10 @@
 <?php 
 	session_start();
 	include ('worker_c.php');
+	if(isset($_SESSION['worker'])==0)
+	{
+		header("Location:login.php");
+	}
 	$worker = unserialize($_SESSION['worker']);
 	//$worker=$_SESSION['worker'];
 ?>
@@ -55,11 +59,13 @@
 <div class="col s10 offset-s1">
 <table>
 		<col style="width:20%">
-        <col style="width:50%">
-        <col style="width:12%">
+        <col style="width:20%">
+        <col style="width:40%">
+		<col style="width:10%">
         <thead>
           <tr>
               <th data-field="id">Complaint Id</th>
+			  <th data-field="room_no">Room_no</th>
               <th data-field="desc">Description</th>
 			  <th data-field="date">Date</th>
 			  <th data-field="status">Status</th>

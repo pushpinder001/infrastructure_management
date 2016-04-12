@@ -5,7 +5,7 @@
 		{	
 			$this->connection();
 			$conn=$this->conn;
-			$_SESSION['st']="Status of order has been successfully updated";
+			$_SESSION['st']='<p align="center" style="color:#67D692">Status of order has been successfully updated</p>';
 			$sql="UPDATE `order` SET `status`='Completed' WHERE `Id`='$id' ";
 			$res=mysqli_query($conn,$sql);
 			header("Location:update_order_status.php");
@@ -29,6 +29,9 @@
 						echo '</td>';
 						echo	'<td>';
 						echo $row['item'];
+						echo '</td>';
+						echo	'<td>';
+						echo $row['quantity'];
 						echo '</td>';
 						echo '<td>';
 						echo $row['date'];
