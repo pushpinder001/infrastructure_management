@@ -62,7 +62,10 @@
 						echo $row['date'];
 						echo '</td>';
 						echo '<td>';
-						echo $row['status'];
+						if($row['status']=="Completed")
+							echo '<i class="material-icons">done</i>';
+						else 
+							echo '<i class="material-icons">schedule</i>';
 						echo '</td>';
 						echo '</tr>';
 					}
@@ -157,7 +160,10 @@
 						echo $row['date'];
 						echo '</td>';
 						echo '<td>';
-						echo $row['status'];
+						if($row['status']=="Completed")
+							echo '<i class="material-icons">done</i>';
+						else 
+							echo '<i class="material-icons">schedule</i>';
 						echo '</td>';
 						echo '</tr>';
 					}
