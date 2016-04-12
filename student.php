@@ -41,7 +41,7 @@
 			}
 		}
 		public function check_status(){
-			$sql="SELECT * FROM `complaint` ORDER by status ASC,date DESC";
+			$sql="SELECT * FROM `complaint` ORDER by status ASC,Id ASC,date ASC";
 			$this->connection();
 			$conn=$this->conn;
 			$data=$conn->query($sql);

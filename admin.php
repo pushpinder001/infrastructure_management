@@ -42,7 +42,7 @@
 		public function check_order_status(){
 			$this->connection();
 			$conn=$this->conn;
-			$sql="SELECT * FROM `order` ORDER by status ASC,date DESC";
+			$sql="SELECT * FROM `order` ORDER by status ASC,Id ASC,date ASC";
 			$data=mysqli_query($conn,$sql);
 			if($data!=false){
 				if(mysqli_num_rows($data)>0){
@@ -134,7 +134,7 @@
 		public function check_complaint_status(){
 			$this->connection();
 			$conn=$this->conn;
-			$sql="SELECT * FROM `complaint` ORDER by status ASC,date DESC";
+			$sql="SELECT * FROM `complaint` ORDER by status ASC,Id ASC,date ASC";
 			$data=mysqli_query($conn,$sql);
 			if($data!=false){
 				if(mysqli_num_rows($data)>0){

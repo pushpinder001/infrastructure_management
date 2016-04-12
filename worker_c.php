@@ -22,7 +22,7 @@
 			//session_start();
 			$this->connection();
 			$conn=$this->conn;
-			$sql="SELECT * FROM `complaint` ORDER by status ASC,date DESC";
+			$sql="SELECT * FROM `complaint` ORDER by status ASC,Id ASC,date ASC";
 			$data=$conn->query($sql);
 			if($data!=false){
 				if(mysqli_num_rows($data)>0){
